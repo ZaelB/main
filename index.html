@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Information System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    main {
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 600px;
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+      font-size: 24px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #555;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    #map {
+      width: 100%;
+      height: 300px;
+    }
+  </style>
+  <script src="https://openlayers.org/en/latest/build/ol.js"></script>
+  <link rel="stylesheet" href="https://openlayers.org/en/latest/css/ol.css" type="text/css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([-123.1207, 49.2827]), // Vancouver, BC coordinates
+          zoom: 12
+        })
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Information System</h1>
+  </header>
+
+  <main>
+    <div class="button-container">
+        <a href="https://zaelb.github.io/acommodation/">
+            <div class="button">Acommodation</div>
+        </a>
+        <a href="https://zaelb.github.io/Scholarship/">
+            <div class="button">Scholarship</div>
+        </a>
+        <a href="https://zaelb.github.io/Network/">
+            <div class="button">Network</div>
+        </a>
+        <a href="https://zaelb.github.io/Helpdesk/">
+            <div class="button">Helpdesk</div>
+        </a>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Information System. All rights reserved.</p>
+  </footer>
+</body>
+</html>
